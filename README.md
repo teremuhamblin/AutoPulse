@@ -3,7 +3,11 @@
 >Moteur d'automatisme modulaire
 - Control
 
+---
+
 [![Dependency Graph](https://github.com/teremuhamblin/AutoPulse/actions/workflows/dependabot/update-graph/badge.svg)](https://github.com/teremuhamblin/AutoPulse/actions/workflows/dependabot/update-graph)
+
+---
 
 ### Fonction modulaire :
 - State machine process
@@ -13,6 +17,13 @@
 - Web UI minimal
 
 ### Structure du projet
+
+---
+
+[![pages-build-deployment](https://github.com/teremuhamblin/AutoPulse/actions/workflows/pages/pages-build-deployment/badge.svg)](https://github.com/teremuhamblin/AutoPulse/actions/workflows/pages/pages-build-deployment)
+
+---
+
 ```text
 AutoPulse
  ├─ README.md
