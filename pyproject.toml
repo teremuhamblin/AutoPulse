@@ -1,0 +1,16 @@
+[project]
+name = "autopulse-control"
+version = "0.1.0"
+description = "Modular automation & monitoring engine"
+requires-python = ">=3.10"
+
+dependencies = [
+  "fastapi",
+  "uvicorn[standard]",
+  "pydantic",
+  "pyyaml"
+]
+
+[build-system]
+requires = ["setuptools", "wheel"]
+build-backend = "setuptools.build_meta"
