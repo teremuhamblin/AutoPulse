@@ -1,0 +1,7 @@
+startup:
+  - outputs: { valve_open: true }
+  - outputs: { pump_run: true }
+
+batch:
+  - outputs: { fill: true }
+  - outputs: { mix: true }
