@@ -1,5 +1,5 @@
 [project]
-name = "autopulse-control"
+name = "AutoPulse"
 version = "1.0.0"
 description = "Minimal modular automation engine (AutoPulse)"
 authors = [
