@@ -1,9 +1,9 @@
-name: Publish AutoPulse Package
+name: Publish autopulse Package
 
 on:
   push:
     tags:
-      - "*"
+      - "v*,*,*"
 
 jobs:
   build-and-publish:
