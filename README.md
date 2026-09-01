@@ -29,13 +29,13 @@ AutoPulse
 ```
 
 ### Dev
-```bash
-pip install -e .
+```pip
+pip install -e
 uvicorn autopulse.api.main:app --reload
 ```
 
 ### UI 
->disponible dans 
+- Disponible dans :
 ```md
 webui/index.html
 ```
