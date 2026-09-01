@@ -3,7 +3,7 @@
 >Moteur d'automatisme modulaire
 - Control
 
-Moteur d’automatisme modulaire :
+### Fonction modulaire :
 - State machine process
 - Séquences YAML
 - I/O virtuels + Modbus/TCP (stub)
