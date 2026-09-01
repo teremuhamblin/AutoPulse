@@ -33,3 +33,12 @@ AutoPulse
 pip install -e .
 uvicorn autopulse.api.main:app --reload
 ```
+
+### UI 
+>disponible dans 
+```md
+webui/index.html
+```
+
+
+
