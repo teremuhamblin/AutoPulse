@@ -1,5 +1,5 @@
 [project]
-name = "AutoPulse"
+name = "autopulse"
 version = "1.0.0"
 description = "Minimal modular automation engine"
 readme = "README.md"
@@ -11,7 +11,7 @@ dependencies = [
 ]
 
 [tool.setuptools]
-packages = ["AutoPulse"]
+packages = ["autopulse"]
 
 [build-system]
 requires = ["setuptools", "wheel"]
