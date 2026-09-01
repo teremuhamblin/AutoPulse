@@ -11,7 +11,7 @@ dependencies = [
 ]
 
 [tool.setuptools]
-packages = ["autopulse"]
+packages = ["AutoPulse"]
 
 [build-system]
 requires = ["setuptools", "wheel"]
