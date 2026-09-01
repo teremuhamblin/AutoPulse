@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+<body>
+  <h1>AutoPulse Control</h1>
+  <pre id="data"></pre>
+  <script>
+    async function refresh() {
+      const r = await fetch("/status");
+      document.getElementById("data").innerText =
+        JSON.stringify(await r.json(), null, 2);
+    }
+    setInterval(refresh, 1000);
+    refresh();
+  </script>
+</body>
+</html>
