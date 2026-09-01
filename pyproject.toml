@@ -1,5 +1,5 @@
 [project]
-name = "autopulse"
+name = "AutoPulse"
 version = "1.0.0"
 description = "Minimal modular automation engine"
 readme = "README.md"
