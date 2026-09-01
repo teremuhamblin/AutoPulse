@@ -1,4 +1,4 @@
-name: Publish autopulse Package
+name: Publish AutoPulse Package
 
 on:
   push:
