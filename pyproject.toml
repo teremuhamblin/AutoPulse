@@ -1,15 +1,21 @@
 [project]
 name = "autopulse-control"
-version = "0.1.0"
-description = "Modular automation & monitoring engine"
+version = "1.0.0"
+description = "Minimal modular automation engine (AutoPulse)"
+authors = [
+  { name = "Major Hamblin (Teremu)" }
+]
+readme = "README.md"
 requires-python = ">=3.10"
-
 dependencies = [
   "fastapi",
   "uvicorn[standard]",
-  "pydantic",
   "pyyaml"
 ]
+
+[tool.setuptools.packages.find]
+where = ["."]
+include = ["autopulse"]
 
 [build-system]
 requires = ["setuptools", "wheel"]
