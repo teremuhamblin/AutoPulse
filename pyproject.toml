@@ -1,10 +1,7 @@
 [project]
 name = "AutoPulse"
 version = "1.0.0"
-description = "Minimal modular automation engine (AutoPulse)"
-authors = [
-  { name = "Major Hamblin (Teremu)" }
-]
+description = "Minimal modular automation engine"
 readme = "README.md"
 requires-python = ">=3.10"
 dependencies = [
@@ -13,9 +10,8 @@ dependencies = [
   "pyyaml"
 ]
 
-[tool.setuptools.packages.find]
-where = ["."]
-include = ["autopulse"]
+[tool.setuptools]
+packages = ["autopulse"]
 
 [build-system]
 requires = ["setuptools", "wheel"]
