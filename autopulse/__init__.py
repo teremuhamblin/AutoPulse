@@ -1,6 +1,6 @@
 """
-AutoPulse Control
-Moteur d’automatisme minimal.
+AutoPulse — Modular Automation Engine
+Version 1.0.0
 """
 
 __version__ = "1.0.0"
