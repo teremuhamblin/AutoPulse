@@ -3,6 +3,8 @@
 >Moteur d'automatisme modulaire
 - Control
 
+[![Dependency Graph](https://github.com/teremuhamblin/AutoPulse/actions/workflows/dependabot/update-graph/badge.svg)](https://github.com/teremuhamblin/AutoPulse/actions/workflows/dependabot/update-graph)
+
 ### Fonction modulaire :
 - State machine process
 - Séquences YAML
