@@ -1,8 +1,3 @@
-"""
-AutoPulse — Modular Automation Engine
-Version 1.0.0
-"""
-
 __version__ = "1.0.0"
 
 from .state_machine import Machine
