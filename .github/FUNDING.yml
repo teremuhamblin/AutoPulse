@@ -1,0 +1,18 @@
+# ============================================================
+#  AutoPulse / Inventra / LégionOS — Funding Configuration
+#  Auteur : Major Hamblin (Teremu)
+#  Version : 1.0 — Format militaire
+# ============================================================
+
+github: teremuhamblin
+
+patreon: teremuhamblin
+ko_fi: teremuhamblin
+buy_me_a_coffee: teremuhamblin
+
+open_collective: autopulse-engine
+custom:
+  - "https://github.com/sponsors/teremuhamblin"
+  - "https://patreon.com/teremuhamblin"
+  - "https://ko-fi.com/teremuhamblin"
+  - "https://buymeacoffee.com/teremuhamblin"
