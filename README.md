@@ -26,9 +26,14 @@
 
 ```text
 AutoPulse
+ ├─ .github
+ │   ├─ workflows
  ├─ README.md
  ├─ pyproject.toml
+ ├─ ROADMAP.md 
+ ├─ CHANGELOG.md 
  ├─ autopulse/
+ │   ├─ README.md 
  │   ├─ __init__.py
  │   ├─ state_machine.py
  │   ├─ sequence_engine.py
@@ -36,9 +41,12 @@ AutoPulse
  │   ├─ api.py
  │   └─ sequences.yaml
  ├─ webui/
+ │   ├─ README.md 
+ │   ├─ app.js
  │   └─ index.html
- └─ docker/
-     └─ Dockerfile
+ ├─ docker/
+ │   ├─ README.md 
+ │   ├─ Dockerfile
 ```
 
 ### Dev
