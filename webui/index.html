@@ -1,14 +1,192 @@
 <!DOCTYPE html>
-<html>
-<body>
-  <h1>AutoPulse</h1>
-  <pre id="data"></pre>
-  <script>
-    async function refresh() {
-      const r = await fetch("/status");
-      document.getElementById("data").innerText =
-        JSON.stringify(await r.json(), null, 2);
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <title>AutoPulse Control v1.2.0</title>
+
+  <style>
+    body {
+      margin: 0;
+      background: #0b0d10;
+      color: #e2e8f0;
+      font-family: Consolas, monospace;
     }
+
+    header {
+      padding: 20px;
+      background: #111418;
+      border-bottom: 2px solid #1f2937;
+      text-align: center;
+      font-size: 28px;
+      font-weight: bold;
+      letter-spacing: 2px;
+      color: #4ade80;
+    }
+
+    .container {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 20px;
+      padding: 20px;
+    }
+
+    .panel {
+      background: #111418;
+      padding: 15px;
+      border: 1px solid #1f2937;
+      border-radius: 6px;
+    }
+
+    .panel h2 {
+      margin-top: 0;
+      color: #4ade80;
+      font-size: 20px;
+    }
+
+    .status-indicator {
+      font-size: 22px;
+      font-weight: bold;
+      margin-top: 10px;
+    }
+
+    .running { color: #22c55e; }
+    .stopped { color: #ef4444; }
+
+    pre {
+      background: #0f1115;
+      padding: 10px;
+      border-radius: 6px;
+      overflow-x: auto;
+      border: 1px solid #1f2937;
+    }
+
+    .actions button {
+      background: #1f2937;
+      color: #e2e8f0;
+      border: 1px solid #4ade80;
+      padding: 10px 15px;
+      margin-right: 10px;
+      border-radius: 4px;
+      cursor: pointer;
+      font-family: Consolas;
+    }
+
+    .actions button:hover {
+      background: #4ade80;
+      color: #0b0d10;
+    }
+  </style>
+</head>
+
+<body>
+  <header>AUTOPULSE — CONTROL PANEL v1.2.0</header>
+
+  <div class="container">
+
+    <!-- PANEL STATUS -->
+    <div class="panel">
+      <h2>État du moteur</h2>
+      <div id="state" class="status-indicator">...</div>
+
+      <div class="actions">
+        <button onclick="action('/start')">START</button>
+        <button onclick="action('/stop')">STOP</button>
+        <button onclick="action('/tick')">TICK</button>
+      </div>
+    </div>
+
+    <!-- PANEL SCHEDULER -->
+    <div class="panel">
+      <h2>Scheduler</h2>
+      <pre id="scheduler">...</pre>
+    </div>
+
+    <!-- PANEL ALARMES -->
+    <div class="panel">
+      <h2>Alarmes</h2>
+      <pre id="alarms">...</pre>
+    </div>
+
+    <!-- PANEL TIMELINE -->
+    <div class="panel">
+      <h2>Timeline d'exécution</h2>
+      <pre id="timeline">...</pre>
+    </div>
+
+    <!-- PANEL IO -->
+    <div class="panel">
+      <h2>I/O</h2>
+      <pre id="io">...</pre>
+    </div>
+
+    <!-- PANEL EVENTS -->
+    <div class="panel">
+      <h2>Événements récents</h2>
+      <pre id="events">...</pre>
+    </div>
+
+    <!-- RAW JSON -->
+    <div class="panel">
+      <h2>Données brutes</h2>
+      <pre id="raw">...</pre>
+    </div>
+
+  </div>
+
+  <script>
+    async function action(endpoint) {
+      try {
+        await fetch(endpoint, { method: "POST" });
+      } catch (e) {
+        console.log("Action error:", e);
+      }
+    }
+
+    async function refresh() {
+      try {
+        const r = await fetch("/status");
+        const data = await r.json();
+
+        // RAW JSON
+        document.getElementById("raw").innerText =
+          JSON.stringify(data, null, 2);
+
+        // STATE
+        const stateEl = document.getElementById("state");
+        if (data.state === "RUNNING") {
+          stateEl.innerText = "RUNNING";
+          stateEl.className = "status-indicator running";
+        } else {
+          stateEl.innerText = "STOPPED";
+          stateEl.className = "status-indicator stopped";
+        }
+
+        // IO
+        document.getElementById("io").innerText =
+          JSON.stringify(data.io || {}, null, 2);
+
+        // EVENTS
+        document.getElementById("events").innerText =
+          JSON.stringify(data.events || [], null, 2);
+
+        // SCHEDULER
+        document.getElementById("scheduler").innerText =
+          JSON.stringify(data.scheduler || {}, null, 2);
+
+        // ALARMES
+        document.getElementById("alarms").innerText =
+          JSON.stringify(data.alarms || [], null, 2);
+
+        // TIMELINE
+        document.getElementById("timeline").innerText =
+          JSON.stringify(data.timeline || [], null, 2);
+
+      } catch (e) {
+        document.getElementById("raw").innerText =
+          "Erreur de connexion à /status";
+      }
+    }
+
     setInterval(refresh, 1000);
     refresh();
   </script>
